@@ -1,6 +1,6 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="./assets/identity-mobile.svg">
-  <img src="./assets/identity.svg" alt="Moch Syafaat Ziqri, Web App & Automation Builder in Bontang, Indonesia. Business tools, digital products, and GovTech developed with AI assistance." width="100%">
+  <source media="(max-width: 600px)" srcset="./assets/identity-mobile.svg?v=2">
+  <img src="./assets/identity.svg?v=2" alt="Moch Syafaat Ziqri, Web App & Automation Builder in Bontang, Indonesia. Business tools, digital products, and GovTech developed with AI assistance." width="100%">
 </picture>
 
 ## Web apps for everyday work

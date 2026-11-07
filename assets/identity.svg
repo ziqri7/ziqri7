@@ -6,23 +6,35 @@
     .value { fill: #d4d4d4; font-weight: 600; }
     .label { fill: #999e9b; }
     .green { fill: #5ebd86; }
-    .command { clip-path: inset(0); animation: type 1100ms steps(20, end) backwards; }
-    .cursor { animation: blink 800ms steps(1, end) 4; }
-    .line { animation: reveal 700ms cubic-bezier(0.16, 1, 0.3, 1) backwards; }
-    .l2 { animation-delay: 140ms; } .l3 { animation-delay: 280ms; }
-    .l4 { animation-delay: 420ms; } .l5 { animation-delay: 560ms; }
-    .l6 { animation-delay: 700ms; }
-    @keyframes type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
-    @keyframes blink { 50% { opacity: 0; } }
-    @keyframes reveal { from { transform: translateY(6px); } to { transform: translateY(0); } }
-    @media (prefers-reduced-motion: reduce) { .line, .command, .cursor { animation: none; } }
+    .command { clip-path: url(#command-clip); }
+    .typing-window { transform-origin: 46px 0; animation: type 900ms steps(21, end) 150ms backwards; }
+    .typing-cursor { fill: #5ebd86; opacity: 0; animation: typing-cursor 1050ms steps(21, end) forwards; }
+    .line { animation: reveal 280ms cubic-bezier(0.16, 1, 0.3, 1) 1050ms backwards; }
+    .l2 { animation-delay: 1210ms; } .l3 { animation-delay: 1370ms; }
+    .l4 { animation-delay: 1530ms; } .l5 { animation-delay: 1690ms; }
+    .l6 { animation-delay: 1950ms; }
+    .cursor { animation: blink 650ms steps(1, end) 1950ms 4 backwards; }
+    @keyframes type { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes typing-cursor {
+      0%, 14% { opacity: 1; transform: translateX(0); }
+      99% { opacity: 1; transform: translateX(214px); }
+      100% { opacity: 0; transform: translateX(214px); }
+    }
+    @keyframes blink { 0%, 50% { opacity: 0; } 51%, 100% { opacity: 1; } }
+    @keyframes reveal { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: translateX(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .line, .typing-window, .typing-cursor, .cursor { animation: none; }
+      .typing-cursor { opacity: 0; }
+    }
   </style>
+  <defs><clipPath id="command-clip"><rect class="typing-window" x="46" y="62" width="224" height="30"/></clipPath></defs>
   <rect width="960" height="370" rx="15" fill="#0b0d0c"/>
   <circle cx="26" cy="27" r="6.5" fill="#ad5554"/>
   <circle cx="49" cy="27" r="6.5" fill="#a98b3a"/>
   <circle cx="72" cy="27" r="6.5" fill="#438552"/>
   <text x="480" y="32" text-anchor="middle" fill="#999e9b" style="font-size:13px">~/ziqri7 / readme</text>
   <text x="46" y="84" class="command"><tspan class="green">$</tspan><tspan class="value"> ./identity --reveal</tspan></text>
+  <rect class="typing-cursor" x="46" y="69" width="9" height="18"/>
   <g class="line"><text x="68" y="132" class="green">[→]</text><text x="116" y="132" class="label">name</text><text x="262" y="132" class="value">Moch Syafaat Ziqri</text></g>
   <g class="line l2"><text x="68" y="162" class="green">[→]</text><text x="116" y="162" class="label">role</text><text x="262" y="162" class="value">Web App &amp; Automation Builder</text></g>
   <g class="line l3"><text x="68" y="192" class="green">[→]</text><text x="116" y="192" class="label">focus</text><text x="262" y="192" class="value">Business Tools · Digital Products · GovTech</text></g>
