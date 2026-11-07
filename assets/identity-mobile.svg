@@ -6,15 +6,14 @@
     .value { fill: #d4d4d4; font-weight: 600; }
     .label { fill: #999e9b; font-size: 14px; }
     .green { fill: #5ebd86; }
-    .command { clip-path: url(#command-clip); }
-    .typing-window { transform-origin: 24px 0; animation: type 900ms steps(21, end) 150ms backwards; }
+    .command { clip-path: inset(0); animation: type 900ms steps(21, end) 150ms backwards; }
     .typing-cursor { fill: #5ebd86; opacity: 0; animation: typing-cursor 1050ms steps(21, end) forwards; }
     .line { animation: reveal 280ms cubic-bezier(0.16, 1, 0.3, 1) 1050ms backwards; }
     .l2 { animation-delay: 1210ms; } .l3 { animation-delay: 1370ms; }
     .l4 { animation-delay: 1530ms; } .l5 { animation-delay: 1690ms; }
     .l6 { animation-delay: 1950ms; }
     .cursor { animation: blink 650ms steps(1, end) 1950ms 4 backwards; }
-    @keyframes type { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
     @keyframes typing-cursor {
       0%, 14% { opacity: 1; transform: translateX(0); }
       99% { opacity: 1; transform: translateX(214px); }
@@ -23,11 +22,10 @@
     @keyframes blink { 0%, 50% { opacity: 0; } 51%, 100% { opacity: 1; } }
     @keyframes reveal { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: translateX(0); } }
     @media (prefers-reduced-motion: reduce) {
-      .line, .typing-window, .typing-cursor, .cursor { animation: none; }
+      .line, .command, .typing-cursor, .cursor { animation: none; }
       .typing-cursor { opacity: 0; }
     }
   </style>
-  <defs><clipPath id="command-clip"><rect class="typing-window" x="24" y="56" width="224" height="30"/></clipPath></defs>
   <rect width="400" height="500" rx="14" fill="#0b0d0c"/>
   <circle cx="24" cy="25" r="5" fill="#ad5554"/><circle cx="43" cy="25" r="5" fill="#a98b3a"/><circle cx="62" cy="25" r="5" fill="#438552"/>
   <text x="376" y="29" text-anchor="end" class="label" style="font-size:12px">~/ziqri7</text>
