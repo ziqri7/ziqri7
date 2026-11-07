@@ -10,7 +10,7 @@
     .l2 { animation-delay: 140ms; } .l3 { animation-delay: 280ms; }
     .l4 { animation-delay: 420ms; } .l5 { animation-delay: 560ms; }
     .l6 { animation-delay: 700ms; }
-    @keyframes reveal { from { opacity: .35; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes reveal { from { transform: translateY(3px); } to { transform: translateY(0); } }
     @media (prefers-reduced-motion: reduce) { .line { animation: none; } }
   </style>
   <rect width="960" height="370" rx="15" fill="#0b0d0c"/>
