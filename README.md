@@ -19,16 +19,23 @@ An application for patient records, service catalogs, invoices, and PDF receipts
 [Open application](https://klinikhewanbontang.pages.dev/) · [Case study](https://ziqri7.github.io/projects/clinic/)
 
 **SIPOR** · private source code<br>
-A booking workflow that covers facility availability, requests, payment review, and notifications. Built with Google Apps Script and Google Workspace.
+A booking workflow that covers facility availability, requests, payment review, and notifications. The public interface runs on Cloudflare Pages, connected through a gateway to Google Apps Script and Google Workspace.
 
-[Open service](https://sites.google.com/view/siporbxt/home) · [Case study](https://ziqri7.github.io/projects/booking/)
+[Open service](https://sipor.pages.dev/) · [Case study](https://ziqri7.github.io/projects/booking/)
 
 The next iteration is a local prototype with synthetic data. It explores a clearer booking calendar, reservation rules, and a separate payment-review workflow. Production integrations and deployment are still pending.
+
+**Financée** · public source code (MIT)<br>
+A family-finance PWA for two accounts, with grouped allocations, shared evidence, and summaries that separate internal transfers. Built with React, TypeScript, Cloudflare Pages Functions, Hono, and Neon PostgreSQL.
+
+[Case study](https://ziqri7.github.io/projects/financee/) · [Source code](https://github.com/ziqri7/family-finance-pwa)
 
 **BuatPakeAI / PRDify** · public source code<br>
 A guided questionnaire collects details about an app idea, then AI helps draft an MVP plan and product requirements document. Built with Next.js, TypeScript, and Supabase.
 
 [Open application](https://buatpakeai.vercel.app/) · [Case study](https://ziqri7.github.io/projects/prdify/) · [Source code](https://github.com/ziqri7/prdify)
+
+### Other work
 
 **DPP BIDOL** · private source code<br>
 A web form and Google Apps Script backend generate preparation documents and PDFs from structured inputs for recurring document work.
@@ -51,7 +58,7 @@ I start by understanding the workflow and breaking the problem into smaller part
 
 ### Tools I've used in these builds
 
-JavaScript · TypeScript · React · Next.js · Node.js · Supabase · Google Apps Script · Google Workspace
+JavaScript · TypeScript · React · Next.js · Node.js · Supabase · Cloudflare Pages Functions · Hono · Neon PostgreSQL · Drizzle ORM · Google Apps Script · Google Workspace
 
 ### Let's connect
 
